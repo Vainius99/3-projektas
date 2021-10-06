@@ -28,6 +28,8 @@ Route::prefix('authors')->group(function () {
 
     Route::get('edit/{author}', 'App\Http\Controllers\AuthorController@edit')->name('author.edit');
     Route::get('update/{author}', 'App\Http\Controllers\AuthorController@update')->name('author.update');
+    Route::post('delete/{author}', 'App\Http\Controllers\AuthorController@destroy')->name('author.destroy');
+    Route::get('show/{author}', 'App\Http\Controllers\AuthorController@show')->name('author.show');
     // Route::get('','AuthorController@index')->name('author.index');
     // Route::get('create', 'AuthorController@create')->name('author.create');
     // Route::post('store', 'AuthorController@store')->name('author.store');

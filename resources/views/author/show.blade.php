@@ -18,22 +18,12 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
-            th {
+            .baltas {
                 background-color: white;
             }
-            td {
-                background-color: white;
-            }
-            .yellow:hover {
-            background-color: yellow;
-            }
-            .red:hover {
-            background-color: red;
-            }
-
         </style>
     </head>
-    <body>
+    <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -46,39 +36,20 @@
                     <a style="color:red">3-Projektas</a>
                 </div>
 
-                <h1 style="color:white;"> Autoriai </h1>
 
-                <a style="color:yellow;" href="{{ url('/authors/create')}}">Create Author</a>
-
-
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Surename</th>
-                        <th>Username</th>
-                        <th>Action</th>
-                    </tr>
-
-                    @foreach ($authors as $author)
-                    <tr>
-                        <td>{{ $author->id }}</td>
-                        <td><a href="{{route('author.show', [$author])}}">{{ $author->name }}</a></td>
-                        <td>{{ $author->surname }}</td>
-                        <td>{{ $author->username }}</td>
-                        <td>
-                            <a class="yellow" href="{{route('author.edit', [$author]) }}">Edit</a>
-                            <form method="post" action="{{route('author.destroy', [$author]) }}">
-                                @csrf
-                                <button class="red" type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </table>
-
-
+                <div class="baltas">
+                <h1>Information about author</h1>
+                <p>ID: {{$author->id}}</p>
+                <p>Name: {{$author->name}}</p>
+                <p>Surname: {{$author->surname}}</p>
+                <p>Username: {{$author->username}}</p>
+                </div>
 
         </div>
     </body>
 </html>
+{{-- <h1>Information about author</h1>
+<p>{{$author->id}}</p>
+<p>{{$author->name}}</p>
+<p>{{$author->surname}}</p>
+<p>{{$author->username}}</p> --}}

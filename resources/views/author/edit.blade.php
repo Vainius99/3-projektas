@@ -34,7 +34,7 @@
                 </div>
 
 
-                    <form action="{{route('author.update', [$author])}}" method="POST">
+                    <form action="{{route('author.update', [$author])}}" method="get">
                         <a style="color: white">Name: </a><input type="text" name="author_name" value="{{$author->name}}" /><br>
                         <a style="color: white">Surname: </a> <input type="text" name="author_surname" value="{{$author->surname}}" /><br>
                         <a style="color: white">Username: </a> <input type="text" name="author_username" value="{{$author->username}}" /><br>
